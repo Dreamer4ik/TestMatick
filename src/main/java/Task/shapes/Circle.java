@@ -6,7 +6,7 @@ public class Circle implements Shape{
     private int radius;
     private Color color;
 
-    public Circle(int radius, Color color) {
+    public Circle(Color color, int radius) {
         this.radius = radius;
         this.color = color;
     }
@@ -24,5 +24,9 @@ public class Circle implements Shape{
     @Override
     public Color getColor() {
         return null;
+    }
+
+    public int getRadius() {
+        return radius;
     }
 }

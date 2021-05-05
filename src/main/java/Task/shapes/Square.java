@@ -6,9 +6,9 @@ public class Square implements Shape{
    private int side;
    private Color color;
 
-    public Square(int side, Color color) {
-        this.side = side;
+    public Square(Color color, int side) {
         this.color = color;
+        this.side = side;
     }
 
     @Override
@@ -26,5 +26,7 @@ public class Square implements Shape{
         return null;
     }
 
-
+    public int getSide() {
+        return side;
+    }
 }
