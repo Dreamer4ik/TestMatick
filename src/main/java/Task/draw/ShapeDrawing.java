@@ -8,8 +8,8 @@ import Task.shapes.Shape;
 public class ShapeDrawing extends Frame {
     protected Color colorThis;
     protected Shape shapeThis;
-    private static int xLocation;
-    private static int yLocation;
+    public static int xLocation;
+    public static int yLocation;
 
     public ShapeDrawing(Shape shape) {
         super("Shape");
@@ -39,4 +39,6 @@ public class ShapeDrawing extends Frame {
     public Shape getShapeThis() {
         return shapeThis;
     }
+
+
 }

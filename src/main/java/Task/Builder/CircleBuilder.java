@@ -6,7 +6,7 @@ import Task.shapes.Shape;
 
 import java.awt.*;
 
-public class CircleBuilder implements ShapeBuilder {
+public class CircleBuilder extends ShapeBuilder {
     @Override
     public Shape BuildShape() {
         return new Circle(

@@ -6,7 +6,7 @@ import Task.shapes.Square;
 
 import java.awt.*;
 
-public class SquareBuilder implements ShapeBuilder {
+public class SquareBuilder extends ShapeBuilder {
     @Override
     public Shape BuildShape() {
         return new Square(

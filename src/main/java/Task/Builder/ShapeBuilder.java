@@ -2,6 +2,8 @@ package Task.Builder;
 
 import Task.shapes.Shape;
 
-public interface ShapeBuilder {
-    Shape BuildShape();
+public abstract class ShapeBuilder {
+   public Shape BuildShape() {
+        return null;
+    }
 }

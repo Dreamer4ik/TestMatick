@@ -6,7 +6,7 @@ import Task.shapes.Trapeze;
 
 import java.awt.*;
 
-public class TrapezeBuilder implements ShapeBuilder {
+public class TrapezeBuilder extends ShapeBuilder {
     @Override
     public Shape BuildShape() {
         int base1 = Start.rand.nextInt(50) + 5;

@@ -1,6 +1,9 @@
 package Task.shapes;
 
+import Task.draw.SquareDrawing;
+
 import java.awt.*;
+import java.util.Arrays;
 
 public class Square implements Shape{
    private int side;
@@ -11,22 +14,34 @@ public class Square implements Shape{
         this.side = side;
     }
 
+
     @Override
     public void draw() {
-
+        new SquareDrawing(this);
     }
 
     @Override
     public int getSpace() {
-        return 0;
+        return side*side;
     }
 
     @Override
     public Color getColor() {
-        return null;
+        return color;
+    }
+
+    public int[] getSideArr() {
+        int [] arr = {side};
+        return arr;
     }
 
     public int getSide() {
         return side;
+    }
+
+    @Override
+    public String toString() {
+        return "Фигура: квадрат, площадь " + getSpace() + " кв. ед., длина сторон(ы): " +  Arrays.toString(getSideArr()) +
+                " ед., цвет (R, G, B) : " + color.getRed() + ", " + color.getGreen() + ", " + color.getBlue() + ".";
     }
 }

@@ -1,6 +1,9 @@
 package Task.shapes;
 
+import Task.draw.TriangleDrawing;
+
 import java.awt.*;
+import java.util.Arrays;
 
 public class Triangle implements Shape {
     private int side1, side2;
@@ -16,17 +19,19 @@ public class Triangle implements Shape {
 
     @Override
     public void draw() {
-
+        new TriangleDrawing(color, side1, side2, this);
     }
 
     @Override
     public int getSpace() {
-        return 0;
+        int p = (int) (side1+side2+side3)/2;
+        int s = (int) Math.sqrt((p*(p-side1)*(p-side2)*(p-side3)));
+        return s;
     }
 
     @Override
     public Color getColor() {
-        return null;
+        return color;
     }
 
     public int getSide1() {
@@ -39,5 +44,24 @@ public class Triangle implements Shape {
 
     public double getSide3() {
         return side3;
+    }
+
+  public   double[] getSideArr() {
+        double [] arr = {side1, side2, side3};
+        return arr;
+    }
+
+    public double getHypotenuse() {
+        double hypotenuse = 0;
+        for(double i : getSideArr()){
+            if(hypotenuse < i) hypotenuse = i;
+        }
+        return hypotenuse;
+    }
+
+    @Override
+    public String toString() {
+         return "Фигура: треугольник, площадь " + getSpace() + " кв. ед., длина сторон: " +  Arrays.toString(getSideArr()) +
+                " ед., цвет (R, G, B) : " + color.getRed() + ", " + color.getGreen() + ", " + color.getBlue() + ", гипотенуза: " + getHypotenuse() + "";
     }
 }

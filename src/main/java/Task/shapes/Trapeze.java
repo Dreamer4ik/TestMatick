@@ -1,6 +1,9 @@
 package Task.shapes;
 
+import Task.draw.TrapezeDrawing;
+
 import java.awt.*;
+import java.util.Arrays;
 
 public class Trapeze implements Shape {
     private int base1, base2, h;
@@ -15,17 +18,17 @@ public class Trapeze implements Shape {
 
     @Override
     public void draw() {
-
+        new TrapezeDrawing(this);
     }
 
     @Override
     public int getSpace() {
-        return 0;
+        return (base1+base2)/2*h;
     }
 
     @Override
     public Color getColor() {
-        return null;
+        return color;
     }
 
     public int getBase1() {
@@ -38,5 +41,17 @@ public class Trapeze implements Shape {
 
     public int getH() {
         return h;
+    }
+
+    int[] sideArr() {
+        int [] arr = {base1, base2, h};
+        return arr;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Фигура: трапеция, площадь " + getSpace() + " кв. ед., стороны: " +  Arrays.toString(sideArr()) +
+                " ед., цвет (R, G, B) : " + color.getRed() + ", " + color.getGreen() + ", " + color.getBlue() + ".";
     }
 }

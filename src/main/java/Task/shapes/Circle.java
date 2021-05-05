@@ -1,5 +1,7 @@
 package Task.shapes;
 
+import Task.draw.CircleDrawing;
+
 import java.awt.*;
 
 public class Circle implements Shape{
@@ -13,20 +15,26 @@ public class Circle implements Shape{
 
     @Override
     public void draw() {
-
+        new CircleDrawing(this);
     }
 
     @Override
     public int getSpace() {
-        return 0;
+        return  ((int) (Math.PI * Math.pow(radius, 2)));
     }
 
     @Override
     public Color getColor() {
-        return null;
+        return color;
     }
 
     public int getRadius() {
         return radius;
+    }
+
+    @Override
+    public String toString() {
+        return "Фигура: круг, площадь " + getSpace() + " кв. ед., радиус: " +  radius +
+                " ед., цвет (R, G, B) : " + color.getRed() + ", " + color.getGreen() + ", " + color.getBlue() + ".";
     }
 }

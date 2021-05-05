@@ -8,7 +8,7 @@ import java.awt.*;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-public class TriangleBuilder implements ShapeBuilder{
+public class TriangleBuilder extends ShapeBuilder{
     @Override
     public Shape BuildShape() {
         int side1, side2;
